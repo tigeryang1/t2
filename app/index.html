@@ -1,0 +1,15 @@
+<!DOCTYPE html>  
+<html>  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+  <script src=javascript.js></script>  
+<body>  
+  <div ng-app="myApp" ng-controller="myCtrl">  
+    <p>Select a make:</p>  
+    <select ng-model="selectedMake" ng-options="make for (make, model) in makes" ng-change="change()">  </select>
+    <select ng-model="selectedModel" ng-show="showModel"  ng-options="model for (model, make) in selectedMake.models" ng-change="update()">  </select>
+      <h1>You selected: {{selectedMake.make}}</h1>  
+      <h2>Model: {{selectedModel.model}}</h2> 
+      <img height="500px" width="1000px" src="placeholder.png" ng-src="{{currentImage}}"> 
+  </div>  
+</body>  
+</html>  
